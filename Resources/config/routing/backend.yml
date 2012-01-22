@@ -1,5 +1,7 @@
 TrsteelBlogBundle_backend_post:
     resource: "@TrsteelBlogBundle/Resources/config/routing/Backend/post.yml"
+    prefix: /post
 
 TrsteelBlogBundle_backend_category:
     resource: "@TrsteelBlogBundle/Resources/config/routing/Backend/category.yml"
+    prefix: /category
