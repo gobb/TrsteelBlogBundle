@@ -77,6 +77,7 @@ class PostRepository extends EntityRepository
 	{
 		$qb = $this->createQueryBuilder('p')
 					->orderBy('p.date', 'DESC')
+					->addOrderBy('p.id', 'DESC')
 		;
 		
 		$qb = $this->isActive($qb, $is_active);
