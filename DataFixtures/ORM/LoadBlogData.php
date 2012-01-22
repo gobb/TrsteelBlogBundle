@@ -55,7 +55,7 @@ class LoadUserData implements FixtureInterface
 			$dates[] = rand($date_start->getTimestamp(), $date_end->getTimestamp());
 		}
 		
-		//sort the dates so they titles increment correctly.
+		//sort the dates so the titles increment correctly.
 		asort($dates);
 		
 		$post_i = 0;
