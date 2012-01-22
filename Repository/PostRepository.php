@@ -13,6 +13,7 @@ class PostRepository extends EntityRepository
 					->leftJoin('p.category', 'cIdSearch')
 					->andwhere('cIdSearch.id = :category_id')->setParameter('category_id', $category_id)
 					->orderBy('p.date', 'DESC')
+					->addOrderBy('p.id', 'DESC')
 		;
 		
 		$qb = $this->isActive($qb, $is_active);
@@ -37,6 +38,7 @@ class PostRepository extends EntityRepository
 					->andWhere('p.date >= :from')->setParameter('from', $from)
 					->andWhere('p.date <= :to')->setParameter('to', $to)
 					->orderBy('p.date', 'DESC')
+					->addOrderBy('p.id', 'DESC')
 		;
 		
 		$qb = $this->isActive($qb, true);
@@ -50,6 +52,7 @@ class PostRepository extends EntityRepository
 		$qb = $this->createQueryBuilder('p')
 					->andWhere('p.id = :post_id')->setParameter('post_id', $post_id)
 					->orderBy('p.date', 'DESC')
+					->addOrderBy('p.date', 'DESC')
 		;
 		
 		$qb = $this->isActive($qb, $is_active);
@@ -68,6 +71,7 @@ class PostRepository extends EntityRepository
 	{
 		$qb = $this->createQueryBuilder('p')
 					->orderBy('p.date', 'DESC')
+					->addOrderBy('p.date', 'DESC')
 		;
 		
 		return $qb->getQuery();
