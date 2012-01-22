@@ -1,0 +1,2 @@
+TrsteelBlogBundle_frontend_post:
+    resource: "@TrsteelBlogBundle/Resources/config/routing/Frontend/post.yml"
