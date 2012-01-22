@@ -1,6 +1,6 @@
-{% extends 'TrsteelBlogBundle::Backend/layout.html.twig' %}
+{% extends '::base.html.twig' %}
 
-{% block trsteel_blog_layout %}
+{% block body %}
 <h1>{% block title %}Edit Post: {{ post.title }}{% endblock %}</h1>
 
 <form action="{{ path('trsteel_blog_backend_post_edit', { 'id': post.id }) }}" method="post" {{ form_enctype(form) }}>

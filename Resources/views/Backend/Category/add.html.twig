@@ -1,6 +1,6 @@
-{% extends 'TrsteelBlogBundle::Backend/layout.html.twig' %}
+{% extends '::base.html.twig' %}
 
-{% block trsteel_blog_layout %}
+{% block body %}
 <h1>{% block title %}Add Category{% endblock %}</h1>
 
 <form action="{{ path('trsteel_blog_backend_category_add') }}" method="post" {{ form_enctype(form) }}>
