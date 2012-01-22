@@ -135,7 +135,7 @@ class PostRepository extends EntityRepository
 			}
 		}
 		
-		return $months;
+		return array_values($months);
 	}
 	
 	private function attachCategories(\Doctrine\ORM\QueryBuilder $qb)
