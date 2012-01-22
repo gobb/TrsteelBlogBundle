@@ -1,0 +1,14 @@
+<div class="trsteel_blog_post_results">
+{% for post in posts %}
+	<div class="trsteel_blog_post_result{% if true == loop.first %} first{% endif %}{% if true == loop.last %} last{% endif %}{% if loop.index is odd %} odd{% else %} even{% endif%}">
+		{% include 'TrsteelBlogBundle::Frontend/Post/_shared/view.html.twig' with { 'preview' : true } %}
+	</div>
+{% else %}
+	<p>There are currently no posts available{% if category is defined %} in this category{% endif %}.</p>
+{% endfor %}
+
+{# display navigation #}
+<div class="trsteel_blog_pagination">
+    {{ posts.render()|raw }}
+</div>
+</div>

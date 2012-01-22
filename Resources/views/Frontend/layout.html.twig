@@ -1,0 +1,30 @@
+{% extends '::base.html.twig' %}
+
+{% block body %}
+
+	<div id="trsteel_blog_panels">
+	{% block category_list %}
+        <div class="trsteel_blog_categories">
+{#		{% render 'TrsteelBlogBundle:Frontend/Post:panelCategories' %}#}
+        </div>
+	{% endblock %}
+	{% block archive_list %}
+        <div class="trsteel_blog_months">
+{#            {% render 'TrsteelBlogBundle:Frontend/Post:panelArchive' %}#}
+        </div>
+    {% endblock %}
+	</div>
+	<div id="trsteel_blog_list">
+	{% block blog_list %}{%endblock %}
+	</div>
+
+{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    {% stylesheets
+        '@TrsteelBlogBundle/Resources/public/css/general.css'
+    %}
+        <link rel="stylesheet" href="{{ asset_url }}" />
+    {% endstylesheets %}
+{% endblock %}

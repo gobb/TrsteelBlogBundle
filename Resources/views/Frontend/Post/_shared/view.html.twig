@@ -1,0 +1,17 @@
+{% if true == preview %}
+	<h2><a href="{{ path('trsteel_blog_frontend_post_view', { post_id: post.id }) }}">{{ post.title }}</a></h2>
+	<div class="trsteel_blog_post_body_preview">{{ post.body(200) }}</div>
+{% else %}
+	<h2>{{ post.title }}</h2>
+	<div class="trsteel_blog_post_body_full">{{ post.body|raw }}</div>
+{% endif %}
+<div class="trsteel_blog_post_timestamp">
+	Posted
+	{% if post.category|length > 0 %}
+		in
+		{% for category in post.category %}
+			'<a href="{{ path('trsteel_blog_frontend_post_category', { category_id: category.id }) }}">{{ category.title }}</a>'{% if loop.last == false %},{% endif %}
+		{% endfor %}
+	{% endif %}
+	on {{ post.date|date("l, jS F Y") }}
+</div>	

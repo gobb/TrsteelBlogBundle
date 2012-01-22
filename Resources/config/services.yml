@@ -1,0 +1,7 @@
+parameters:
+#    trsteel_blog.example.class: Trsteel\BlogBundle\Example
+
+services:
+#    trsteel_blog.example:
+#        class: %trsteel_blog.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

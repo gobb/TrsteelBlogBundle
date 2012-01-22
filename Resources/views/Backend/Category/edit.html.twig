@@ -1,0 +1,20 @@
+{% extends 'TrsteelBlogBundle::Backend/layout.html.twig' %}
+
+{% block trsteel_blog_layout %}
+<h1>{% block title %}Edit Category: {{ category.title }}{% endblock %}</h1>
+
+<form action="{{ path('trsteel_blog_backend_category_edit', { 'id': category.id }) }}" method="post" {{ form_enctype(form) }}>
+    {{ form_widget(form) }}
+    <p>
+        <button type="submit" formnovalidate="formnovalidate">Edit</button>
+    </p>
+</form>
+
+<ul class="record_actions">
+    <li>
+        <a href="{{ path('trsteel_blog_backend_category_index') }}">
+            Back to the list
+        </a>
+    </li>
+</ul>
+{% endblock %}

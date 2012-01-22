@@ -1,0 +1,6 @@
+{% extends 'TrsteelBlogBundle::Frontend/layout.html.twig' %}
+
+{% block blog_list %}
+<h1>{{ category.title }}</h1>
+{% include 'TrsteelBlogBundle::Frontend/Post/_shared/list.html.twig' %}
+{% endblock %}

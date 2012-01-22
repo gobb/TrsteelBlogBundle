@@ -1,0 +1,8 @@
+{% if months|length > 0 %}
+<h2>Archive</h2>
+<ul>
+    {% for month in months %}
+    <li><a href="{{ path('trsteel_blog_frontend_post_archive', { year: month.date|date("Y"), month: month.date|date("m") }) }}">{{ month.date|date("F Y") }}{% if true == show_post_count %} ({{ month.post_count }}){% endif %}</a></li>
+    {% endfor %}
+</ul>
+{% endif %}

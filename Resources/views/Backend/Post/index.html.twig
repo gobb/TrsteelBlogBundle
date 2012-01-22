@@ -1,0 +1,51 @@
+{% extends 'TrsteelBlogBundle::Backend/layout.html.twig' %}
+
+{% block trsteel_blog_layout %}
+	<h1>{% block title %}Posts{% endblock %}</h1>
+
+	<table>
+	<tr>
+	{# sorting of properties based on query components #}
+	    <th>{{ posts.sortable('Id', 'p.id')|raw }}</th>
+	    <th>{{ posts.sortable('Date', 'p.date')|raw }}</th>
+	    <th>{{ posts.sortable('Title', 'p.title')|raw }}</th>
+	    <th>{{ posts.sortable('Created', 'p.created_at')|raw }}</th>
+	    <th>{{ posts.sortable('Updated', 'p.updated_at')|raw }}</th>
+	    <th>Actions</th>
+	</tr>
+
+	{# table body #}
+	{% for post in posts %}
+	<tr class="{% if loop.index is odd %}odd{% else %}even{% endif %}">
+	    <td>{{ post.id }}</td>
+	    <td>{{ post.date|date("d-M-Y") }}</td>
+	    <td>{{ post.title }}</td>
+        <td>{% if post.createdat %}{{ post.createdat|date('d-M-Y h:ia') }}{% endif%}</td>
+        <td>{% if post.updatedat %}{{ post.updatedat|date('d-M-Y h:i:a') }}{% endif%}</td>
+        <td>
+            <ul>
+                <li>
+                    <a href="{{ path('trsteel_blog_backend_post_edit', { 'id': post.id }) }}">Edit</a>
+                </li>
+				<li>
+					<a href="{{ path('trsteel_blog_backend_post_delete', { 'id' : post.id }) }}" onclick="return confirm('Are you sure?');">Delete</a>
+				</li>
+            </ul>
+        </td>
+
+	</tr>
+	{% endfor %}
+	</table>
+	{# display navigation #}
+	<div class="trsteel_blog_pagination">
+	    {{ posts.render()|raw }}
+	</div>
+
+	<ul>
+	    <li>
+	        <a href="{{ path('trsteel_blog_backend_post_add') }}">
+	            Create a new entry
+	        </a>
+	    </li>
+	</ul>
+{% endblock %}

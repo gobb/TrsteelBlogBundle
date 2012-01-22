@@ -1,0 +1,7 @@
+{% extends 'TrsteelBlogBundle::Frontend/layout.html.twig' %}
+
+{% block blog_list %}
+	<div class="trsteel_blog_post_view">
+		{% include 'TrsteelBlogBundle::Frontend/Post/_shared/view.html.twig' with { 'preview' : false } %}
+	</div>
+{% endblock %}

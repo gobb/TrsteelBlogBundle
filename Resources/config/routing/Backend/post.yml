@@ -1,0 +1,15 @@
+trsteel_blog_backend_post_index:
+    pattern:  /
+    defaults: { _controller: TrsteelBlogBundle:Backend\Post:index }
+
+trsteel_blog_backend_post_add:
+    pattern:  /add
+    defaults: { _controller: TrsteelBlogBundle:Backend\Post:add }
+
+trsteel_blog_backend_post_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: TrsteelBlogBundle:Backend\Post:edit }
+
+trsteel_blog_backend_post_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: TrsteelBlogBundle:Backend\Post:delete }

@@ -1,0 +1,19 @@
+body {
+    background:#ccc;
+    color:#fff;
+}
+
+#trsteel_blog_panels {
+    width: 200px;
+    float: left;
+    padding: 15px;
+    border: dotted 1px #333;
+}
+
+#trsteel_blog_list {
+    float: left;
+    padding: 15px;
+    margin-left: 5px;
+    border: dotted 1px #333;
+    width: 600px;
+}

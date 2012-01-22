@@ -1,0 +1,23 @@
+trsteel_blog_frontend_post_index:
+    pattern: /
+    defaults:
+        _controller: TrsteelBlogBundle:Frontend\Post:index
+
+trsteel_blog_frontend_post_category:
+    pattern: /category/{category_id}
+    defaults:
+        _controller: TrsteelBlogBundle:Frontend\Post:category
+
+trsteel_blog_frontend_post_view:
+    pattern:  /view/{post_id}
+    defaults:
+        _controller: TrsteelBlogBundle:Frontend\Post:view
+
+trsteel_blog_frontend_post_archive:
+    pattern:  /archive/{year}/{month}
+    defaults:
+        _controller: TrsteelBlogBundle:Frontend\Post:archive
+        month: null
+    requirements:
+        year: \d+
+        month: \d+
