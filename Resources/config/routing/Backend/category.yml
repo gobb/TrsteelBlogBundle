@@ -1,15 +1,19 @@
 trsteel_blog_backend_category_index:
     pattern:  /
-    defaults: { _controller: TrsteelBlogBundle:Backend\Category:index }
+    defaults:
+        _controller: TrsteelBlogBundle:Backend\Category:index
 
 trsteel_blog_backend_category_add:
     pattern:  /add
-    defaults: { _controller: TrsteelBlogBundle:Backend\Category:add }
+    defaults:
+        _controller: TrsteelBlogBundle:Backend\Category:add
 
 trsteel_blog_backend_category_edit:
     pattern:  /{id}/edit
-    defaults: { _controller: TrsteelBlogBundle:Backend\Category:edit }
+    defaults:
+        _controller: TrsteelBlogBundle:Backend\Category:edit
 
 trsteel_blog_backend_category_delete:
     pattern:  /{id}/delete
-    defaults: { _controller: TrsteelBlogBundle:Backend\Category:delete }
+    defaults:
+        _controller: TrsteelBlogBundle:Backend\Category:delete
