@@ -20,30 +20,30 @@ class Configuration implements ConfigurationInterface
         $treeBuilder = new TreeBuilder();
         $rootNode = $treeBuilder->root('trsteel_blog');
 
-		$rootNode
-			->children()
-				->arrayNode('panels')
-					->addDefaultsIfNotSet()
-					->children()
-						->arrayNode('categories')
-							->addDefaultsIfNotSet()
-							->children()
-								->booleanNode('must_have_posts')->defaultTrue()->end()
-								->booleanNode('show_post_count')->defaultTrue()->end()
-							->end()
-						->end()
-						->arrayNode('archive')
-							->addDefaultsIfNotSet()
-							->children()
-								->booleanNode('must_have_posts')->defaultFalse()->end()
-								->booleanNode('show_post_count')->defaultTrue()->end()
-								->scalarNode('number_of_months')->defaultValue(12)->end()
-							->end()
-						->end()
-					->end()
-				->end()
-			->end()
-		;
+        $rootNode
+            ->children()
+                ->arrayNode('panels')
+                    ->addDefaultsIfNotSet()
+                    ->children()
+                        ->arrayNode('categories')
+                            ->addDefaultsIfNotSet()
+                            ->children()
+                                ->booleanNode('must_have_posts')->defaultTrue()->end()
+                                ->booleanNode('show_post_count')->defaultTrue()->end()
+                            ->end()
+                        ->end()
+                        ->arrayNode('archive')
+                            ->addDefaultsIfNotSet()
+                            ->children()
+                                ->booleanNode('must_have_posts')->defaultFalse()->end()
+                                ->booleanNode('show_post_count')->defaultTrue()->end()
+                                ->scalarNode('number_of_months')->defaultValue(12)->end()
+                            ->end()
+                        ->end()
+                    ->end()
+                ->end()
+            ->end()
+        ;
         return $treeBuilder;
     }
 }

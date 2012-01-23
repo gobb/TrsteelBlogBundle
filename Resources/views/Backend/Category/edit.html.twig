@@ -1,6 +1,6 @@
-{% extends '::base.html.twig' %}
+{% extends 'TrsteelAdminBundle::base.html.twig' %}
 
-{% block body %}
+{% block trsteel_admin_content %}
 <h1>{% block title %}Edit Category: {{ category.title }}{% endblock %}</h1>
 
 <form action="{{ path('trsteel_blog_backend_category_edit', { 'id': category.id }) }}" method="post" {{ form_enctype(form) }}>

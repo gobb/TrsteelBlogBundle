@@ -1,7 +1,7 @@
 {% if categories|length > 0 %}
 <h2>Categories</h2>
 <ul>
-	<li><a href="{{ path('trsteel_blog_frontend_post_index') }}">All Categories</a>
+    <li><a href="{{ path('trsteel_blog_frontend_post_index') }}">All Categories</a>
     {% for category in categories %}
     <li><a href="{{ path('trsteel_blog_frontend_post_category', { category_id: category.category.id }) }}">{{ category.category.title }}{% if true == show_post_count %} ({{ category.post_count }}){% endif %}</a></li>
     {% endfor %}

@@ -28,7 +28,7 @@ class Category
      * @var string $title
      *
      * @ORM\Column(name="title", type="string", length=255)
-	 * @Assert\NotBlank(message="Please enter a category.")
+     * @Assert\NotBlank(message="Please enter a category.")
      */
     private $title;
 
@@ -36,7 +36,7 @@ class Category
      * @var datetime $created_at
      *
      * @ORM\Column(name="created_at", type="datetime")
-	 * @Assert\DateTime()
+     * @Assert\DateTime()
      */
     private $created_at;
 
@@ -44,23 +44,23 @@ class Category
      * @var datetime $updated_at
      *
      * @ORM\Column(name="updated_at", type="datetime")
-	 * @Assert\DateTime()
+     * @Assert\DateTime()
      */
     private $updated_at;
 
-	/**
-	 * @var $post
-	 *
-	 * @ORM\ManyToMany(targetEntity="Trsteel\BlogBundle\Entity\Post", mappedBy="category")
-	 */
-	private $post;
+    /**
+     * @var $post
+     *
+     * @ORM\ManyToMany(targetEntity="Trsteel\BlogBundle\Entity\Post", mappedBy="category")
+     */
+    private $post;
 
-	function __construct()
-	{
-		$this->post			= new \Doctrine\Common\Collections\ArrayCollection();
-		$this->created_at	= new \DateTime();
-		$this->updated_at	= new \DateTime();
-	}
+    function __construct()
+    {
+        $this->post            = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->created_at    = new \DateTime();
+        $this->updated_at    = new \DateTime();
+    }
 
     /**
      * Get id
@@ -152,13 +152,13 @@ class Category
         return $this->post;
     }
 
-	/**
-	 * preUpdate function
-	 *
-	 * @ORM\preUpdate
-	 */
-	public function preUpdate()
-	{
-		$this->updated_at = new \DateTime();
-	}
+    /**
+     * preUpdate function
+     *
+     * @ORM\preUpdate
+     */
+    public function preUpdate()
+    {
+        $this->updated_at = new \DateTime();
+    }
 }

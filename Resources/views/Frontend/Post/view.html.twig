@@ -3,7 +3,7 @@
 {% block title %}{{ parent() }}: {{ post.title }}{% endblock %}
 
 {% block blog_list %}
-	<div class="trsteel_blog_post_view">
-		{% include 'TrsteelBlogBundle::Frontend/Post/_shared/view.html.twig' with { 'preview' : false } %}
-	</div>
+    <div class="trsteel_blog_post_view">
+        {% include 'TrsteelBlogBundle::Frontend/Post/_shared/view.html.twig' with { 'preview' : false } %}
+    </div>
 {% endblock %}

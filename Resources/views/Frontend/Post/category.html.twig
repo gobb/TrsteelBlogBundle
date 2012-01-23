@@ -3,6 +3,6 @@
 {% block title %}{{ parent() }}: {{ category.title }}{% endblock %}
 
 {% block blog_list %}
-	<h1>{{ category.title }}</h1>
-	{% include 'TrsteelBlogBundle::Frontend/Post/_shared/list.html.twig' %}
+    <h1>{{ category.title }}</h1>
+    {% include 'TrsteelBlogBundle::Frontend/Post/_shared/list.html.twig' %}
 {% endblock %}

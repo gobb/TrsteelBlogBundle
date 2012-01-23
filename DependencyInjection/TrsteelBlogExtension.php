@@ -25,12 +25,12 @@ class TrsteelBlogExtension extends Extension
         $loader = new Loader\YamlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
         $loader->load('services.yml');
 
-		$container->setParameter('trsteel_blog.panels.categories.must_have_posts', $config['panels']['categories']['must_have_posts']);
-		$container->setParameter('trsteel_blog.panels.categories.show_post_count', $config['panels']['categories']['show_post_count']);
-		
-		$container->setParameter('trsteel_blog.panels.archive.must_have_posts', $config['panels']['archive']['must_have_posts']);
-		$container->setParameter('trsteel_blog.panels.archive.show_post_count', $config['panels']['archive']['show_post_count']);
-		$container->setParameter('trsteel_blog.panels.archive.number_of_months', $config['panels']['archive']['number_of_months']);
+        $container->setParameter('trsteel_blog.panels.categories.must_have_posts', $config['panels']['categories']['must_have_posts']);
+        $container->setParameter('trsteel_blog.panels.categories.show_post_count', $config['panels']['categories']['show_post_count']);
+        
+        $container->setParameter('trsteel_blog.panels.archive.must_have_posts', $config['panels']['archive']['must_have_posts']);
+        $container->setParameter('trsteel_blog.panels.archive.show_post_count', $config['panels']['archive']['show_post_count']);
+        $container->setParameter('trsteel_blog.panels.archive.number_of_months', $config['panels']['archive']['number_of_months']);
 
     }
 }
