@@ -20,8 +20,8 @@
 	    <td>{{ post.id }}</td>
 	    <td>{{ post.date|date("d-M-Y") }}</td>
 	    <td>{{ post.title }}</td>
-        <td>{% if post.createdat %}{{ post.createdat|date('d-M-Y h:ia') }}{% endif%}</td>
-        <td>{% if post.updatedat %}{{ post.updatedat|date('d-M-Y h:i:a') }}{% endif%}</td>
+        <td>{% if post.createdat %}{{ post.createdat|date('d-M-Y h:ia') }}{% endif %}</td>
+        <td>{% if post.updatedat %}{{ post.updatedat|date('d-M-Y h:i:a') }}{% endif %}</td>
         <td>
             <ul>
                 <li>
