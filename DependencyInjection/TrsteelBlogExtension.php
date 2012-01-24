@@ -25,6 +25,8 @@ class TrsteelBlogExtension extends Extension
         $loader = new Loader\YamlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
         $loader->load('services.yml');
 
+        $container->setParameter('trsteel_blog.results_per_page', $config['results_per_page']);
+
         $container->setParameter('trsteel_blog.panels.categories.must_have_posts', $config['panels']['categories']['must_have_posts']);
         $container->setParameter('trsteel_blog.panels.categories.show_post_count', $config['panels']['categories']['show_post_count']);
         

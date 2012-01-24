@@ -22,6 +22,7 @@ class Configuration implements ConfigurationInterface
 
         $rootNode
             ->children()
+                ->scalarNode('results_per_page')->defaultValue(10)->end()
                 ->arrayNode('panels')
                     ->addDefaultsIfNotSet()
                     ->children()

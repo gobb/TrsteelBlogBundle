@@ -17,7 +17,7 @@ class PostController extends Controller
         $posts = $paginator->paginate(
             $query,
             $this->get('request')->query->get('page', 1), #page number
-            10 #limit per page
+            $this->container->getParameter('trsteel_blog.results_per_page') #limit per page
         );
 
         return $this->render('TrsteelBlogBundle:FrontEnd/Post:index.html.twig', array(
@@ -40,7 +40,7 @@ class PostController extends Controller
         $posts = $paginator->paginate(
             $query,
             $this->get('request')->query->get('page', 1), #page number
-            10 #limit per page
+            $this->container->getParameter('trsteel_blog.results_per_page') #limit per page
         );
     
         return $this->render('TrsteelBlogBundle:FrontEnd/Post:category.html.twig', array(
