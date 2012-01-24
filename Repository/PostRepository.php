@@ -10,14 +10,14 @@ class PostRepository extends EntityRepository
     public function getPostsByCategoryQuery($category_id, $is_active = true)
     {
         $qb = $this->createQueryBuilder('p')
-                    ->leftJoin('p.category', 'c')
-                    ->andwhere('c.id = :category_id')->setParameter('category_id', $category_id)
                     ->orderBy('p.date', 'DESC')
                     ->addOrderBy('p.id', 'DESC')
         ;
         
         $qb = $this->isActive($qb, $is_active);
         $qb = $this->attachCategories($qb);
+        
+        $qb->andwhere('c.id = :category_id')->setParameter('category_id', $category_id);
         
         return $qb->getQuery();
     }
