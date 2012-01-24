@@ -8,8 +8,6 @@ class CategoryRepository extends EntityRepository
 {
     public function getCategoryListQuery($must_have_posts = true, $get_post_count = true)
     {
-        $em = $this->getEntityManager();
-
         $qb = $this->createQueryBuilder('c');
         
         if ($must_have_posts || $get_post_count) {

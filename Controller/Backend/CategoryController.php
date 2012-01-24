@@ -19,8 +19,7 @@ class CategoryController extends Controller
     */
     public function indexAction()
     {
-        $em = $this->getDoctrine()->getEntityManager();
-
+        $em         = $this->getDoctrine()->getEntityManager();
         $categories = $em->getRepository('TrsteelBlogBundle:Category')->findAll();
 
         return $this->render('TrsteelBlogBundle:Backend/Category:index.html.twig', array(
@@ -65,9 +64,8 @@ class CategoryController extends Controller
     */
     public function editAction($id)
     {
-        $em = $this->getDoctrine()->getEntityManager();
-
-        $category = $em->getRepository('TrsteelBlogBundle:Category')->find($id);
+        $em         = $this->getDoctrine()->getEntityManager();
+        $category   = $em->getRepository('TrsteelBlogBundle:Category')->find($id);
 
         if (!$category) {
             throw $this->createNotFoundException('Unable to find Category.');
@@ -103,8 +101,8 @@ class CategoryController extends Controller
     */
     public function deleteAction($id)
     {
-        $em = $this->getDoctrine()->getEntityManager();
-        $category = $em->getRepository('TrsteelBlogBundle:Category')->find($id);
+        $em         = $this->getDoctrine()->getEntityManager();
+        $category   = $em->getRepository('TrsteelBlogBundle:Category')->find($id);
 
         if (!$category) {
             throw $this->createNotFoundException('Unable to find Category.');

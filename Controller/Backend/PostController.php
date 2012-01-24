@@ -20,8 +20,7 @@ class PostController extends Controller
     public function indexAction()
     {
         $em     = $this->getDoctrine()->getEntityManager();
-        $repo    = $em->getRepository('TrsteelBlogBundle:Post');
-        $query    = $repo->getPostsQuery();
+        $query  = $em->getRepository('TrsteelBlogBundle:Post')->getPostsQuery();
         
         $paginator = $this->get('knp_paginator');
 
@@ -42,9 +41,9 @@ class PostController extends Controller
     */
     public function addAction()
     {
-        $post = new Post();
-        $request = $this->getRequest();
-        $form   = $this->createForm(new PostType(), $post);
+        $post       = new Post();
+        $request    = $this->getRequest();
+        $form       = $this->createForm(new PostType(), $post);
 
         if ("POST" == $request->getMethod()) {
             $form->bindRequest($request);
@@ -74,15 +73,14 @@ class PostController extends Controller
     public function editAction($id)
     {
         $em     = $this->getDoctrine()->getEntityManager();
-        $repo    = $em->getRepository('TrsteelBlogBundle:Post');       
-        $post     = $repo->getPostWithCategory($id, null);
+        $post   = $em->getRepository('TrsteelBlogBundle:Post')->getPostWithCategory($id, null);
 
         if (!$post) {
             throw $this->createNotFoundException('Unable to find Post.');
         }
 
-        $form = $this->createForm(new PostType(), $post);
-        $request = $this->getRequest();
+        $form       = $this->createForm(new PostType(), $post);
+        $request    = $this->getRequest();
 
         if ("POST" == $request->getMethod()) {
             $form->bindRequest($request);
@@ -110,8 +108,8 @@ class PostController extends Controller
     */
     public function deleteAction($id)
     {
-        $em = $this->getDoctrine()->getEntityManager();
-        $post = $em->getRepository('TrsteelBlogBundle:Post')->find($id);
+        $em     = $this->getDoctrine()->getEntityManager();
+        $post   = $em->getRepository('TrsteelBlogBundle:Post')->find($id);
 
         if (!$post) {
             throw $this->createNotFoundException('Unable to find Post.');
