@@ -34,9 +34,9 @@ class CategoryController extends Controller
     */
     public function addAction()
     {
-        $category = new Category();
-        $request = $this->getRequest();
-        $form   = $this->createForm(new CategoryType(), $category);
+        $category   = new Category();
+        $request    = $this->getRequest();
+        $form       = $this->createForm(new CategoryType(), $category);
 
         if ("POST" == $request->getMethod()) {
             $form->bindRequest($request);
@@ -73,8 +73,8 @@ class CategoryController extends Controller
             throw $this->createNotFoundException('Unable to find Category.');
         }
 
-        $form = $this->createForm(new CategoryType(), $category);
-        $request = $this->getRequest();
+        $form       = $this->createForm(new CategoryType(), $category);
+        $request    = $this->getRequest();
 
         if ("POST" == $request->getMethod()) {
             $form->bindRequest($request);

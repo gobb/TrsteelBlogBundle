@@ -11,8 +11,8 @@ class PostController extends Controller
     {
     
         $em     = $this->getDoctrine()->getEntityManager();
-        $repo    = $em->getRepository('TrsteelBlogBundle:Post');
-        $query    = $repo->getPostsWithCategoryQuery(true);
+        $repo   = $em->getRepository('TrsteelBlogBundle:Post');
+        $query  = $repo->getPostsWithCategoryQuery(true);
         
         $paginator = $this->get('knp_paginator');
 
@@ -30,8 +30,8 @@ class PostController extends Controller
     public function categoryAction($category_id)
     {
         $em             = $this->getDoctrine();
-        $repo_post        = $em->getRepository('TrsteelBlogBundle:Post');
-        $repo_category    = $em->getRepository('TrsteelBlogBundle:Category');
+        $repo_post      = $em->getRepository('TrsteelBlogBundle:Post');
+        $repo_category  = $em->getRepository('TrsteelBlogBundle:Category');
         
         if (!$category = $repo_category->find($category_id)) {
             throw $this->createNotFoundException('Unable to find Category.');
@@ -48,7 +48,7 @@ class PostController extends Controller
         );
     
         return $this->render('TrsteelBlogBundle:FrontEnd/Post:category.html.twig', array(
-            'category'    => $category,
+            'category'  => $category,
             'posts'     => $posts
         ));
     }
@@ -56,8 +56,8 @@ class PostController extends Controller
     public function archiveAction($year, $month = null)
     {
         $em     = $this->getDoctrine()->getEntityManager();
-        $repo    = $em->getRepository('TrsteelBlogBundle:Post');
-        $query     = $repo->getPostsByYearMonth($year, $month);
+        $repo   = $em->getRepository('TrsteelBlogBundle:Post');
+        $query  = $repo->getPostsByYearMonth($year, $month);
         
         $paginator = $this->get('knp_paginator');
 
@@ -75,8 +75,8 @@ class PostController extends Controller
     public function viewAction($post_id)
     {
         $em     = $this->getDoctrine()->getEntityManager();
-        $repo    = $em->getRepository('TrsteelBlogBundle:Post');
-        $post     = $repo->getPostWithCategory($post_id, true);
+        $repo   = $em->getRepository('TrsteelBlogBundle:Post');
+        $post   = $repo->getPostWithCategory($post_id, true);
         
         if (!$post) {
             throw $this->createNotFoundException('Unable to find Post.');
@@ -90,7 +90,7 @@ class PostController extends Controller
     public function panelCategoriesAction()
     {
         $em     = $this->getDoctrine()->getEntityManager();
-        $repo    = $em->getRepository('TrsteelBlogBundle:Category');
+        $repo   = $em->getRepository('TrsteelBlogBundle:Category');
 
         $must_have_posts    = $this->container->getParameter('trsteel_blog.panels.categories.must_have_posts');
         $show_post_count    = $this->container->getParameter('trsteel_blog.panels.categories.show_post_count');
@@ -108,7 +108,7 @@ class PostController extends Controller
         $em     = $this->getDoctrine()->getEntityManager();
         $repo    = $em->getRepository('TrsteelBlogBundle:Post');
 
-        $number_of_months    = $this->container->getParameter('trsteel_blog.panels.archive.number_of_months');
+        $number_of_months   = $this->container->getParameter('trsteel_blog.panels.archive.number_of_months');
         $must_have_posts    = $this->container->getParameter('trsteel_blog.panels.archive.must_have_posts');
         $show_post_count    = $this->container->getParameter('trsteel_blog.panels.archive.show_post_count');
                         
@@ -120,7 +120,7 @@ class PostController extends Controller
     
         return $this->render('TrsteelBlogBundle:Frontend/Panels:archive.html.twig', array(
             'months'            => $months,
-            'show_post_count'    => $show_post_count,
+            'show_post_count'   => $show_post_count,
         ));
     }
 }
