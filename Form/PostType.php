@@ -22,15 +22,7 @@ class PostType extends AbstractType
                 'property'    => 'title',
             ))
             ->add('title')
-            ->add('body', 'ckeditor', array(
-/*
-                'toolbar'    => array('custom'),
-                'toolbar_groups' => array(
-                    'custom' => array('Source','-', 'Bold','Italic','Underline','Strike','NumberedList','BulletedList'),
-                ),
-*/
-                'uiColor' => '#AADC6E'
-            ))
+            ->add('body', 'ckeditor')
         ;
     }
 
