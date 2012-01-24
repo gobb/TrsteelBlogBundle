@@ -9,7 +9,6 @@ class PostController extends Controller
 {
     public function indexAction()
     {
-    
         $em     = $this->getDoctrine()->getEntityManager();
         $repo   = $em->getRepository('TrsteelBlogBundle:Post');
         $query  = $repo->getPostsWithCategoryQuery(true);
