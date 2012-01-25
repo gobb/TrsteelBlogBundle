@@ -52,7 +52,7 @@ class PostRepository extends EntityRepository
         $qb = $this->createQueryBuilder('p')
                     ->andWhere('p.id = :post_id')->setParameter('post_id', $post_id)
                     ->orderBy('p.date', 'DESC')
-                    ->addOrderBy('p.date', 'DESC')
+                    ->addOrderBy('p.id', 'DESC')
         ;
         
         $qb = $this->isActive($qb, $is_active);
@@ -71,7 +71,7 @@ class PostRepository extends EntityRepository
     {
         $qb = $this->createQueryBuilder('p')
                     ->orderBy('p.date', 'DESC')
-                    ->addOrderBy('p.date', 'DESC')
+                    ->addOrderBy('p.id', 'DESC')
         ;
         
         return $qb->getQuery();
