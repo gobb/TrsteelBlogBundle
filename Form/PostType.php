@@ -11,15 +11,15 @@ class PostType extends AbstractType
     {
         $builder
             ->add('is_enabled', null, array(
-                'required'    => false,
-                'label'        => 'Enabled?'
+                'required'  => false,
+                'label'     => 'Enabled?'
             ))
             ->add('date')
             ->add('category', 'entity', array(
-                'class'        => 'Trsteel\\BlogBundle\\Entity\\Category',
-                'multiple'    => true,
-                'expanded'    => true,
-                'property'    => 'title',
+                'class'     => 'Trsteel\\BlogBundle\\Entity\\Category',
+                'multiple'  => true,
+                'expanded'  => true,
+                'property'  => 'title',
             ))
             ->add('title')
             ->add('body', 'ckeditor')
