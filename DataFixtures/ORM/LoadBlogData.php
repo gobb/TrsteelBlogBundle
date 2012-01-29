@@ -73,10 +73,11 @@ class LoadUserData implements FixtureInterface
             $date->setTimestamp($unix_timestamp);
             
             $post = new Post();
-            $post->setDate($date);
-            $post->setTitle('Post ' . ($post_i + 1));
-            $post->setBody($body);
-            $post->setIsEnabled(3 == rand(1, 3) ? false : true);# 1 in 3 chance the post will be disabled
+            $post->setDate($date)
+                    ->setTitle('Post ' . ($post_i + 1))
+                    ->setBody($body)
+                    ->setIsEnabled(3 == rand(1, 3) ? false : true)# 1 in 3 chance the post will be disabled
+            ;
 
             $post_categories = array();
 
