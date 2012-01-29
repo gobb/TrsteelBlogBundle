@@ -115,6 +115,7 @@ class Post
     public function setDate(\DateTime $date)
     {
         $this->date = $date;
+        return $this;
     }
 
     /**
@@ -135,6 +136,7 @@ class Post
     public function setTitle($title)
     {
         $this->title = $title;
+        return $this;
     }
 
     /**
@@ -155,6 +157,7 @@ class Post
     public function setBody($body)
     {
         $this->body = $body;
+        return $this;
     }
 
     /**
@@ -179,6 +182,7 @@ class Post
     public function setIsEnabled($isEnabled)
     {
         $this->is_enabled = $isEnabled;
+        return $this;
     }
 
     /**
@@ -199,6 +203,7 @@ class Post
     public function setCreatedAt(\DateTime $created_at)
     {
         $this->created_at = $created_at;
+        return $this;
     }
 
     /**
@@ -219,6 +224,7 @@ class Post
     public function setUpdatedAt(\DateTime $updated_at)
     {
         $this->updated_at = $updated_at;
+        return $this;
     }
 
     /**
@@ -239,6 +245,7 @@ class Post
     public function addCategory(\Trsteel\BlogBundle\Entity\Category $category)
     {
         $this->category[] = $category;
+        return $this;
     }
 
     /**

@@ -80,6 +80,7 @@ class Category
     public function setTitle($title)
     {
         $this->title = $title;
+        return $this;
     }
 
     /**
@@ -100,6 +101,7 @@ class Category
     public function setCreatedAt(\DateTime $created_at)
     {
         $this->created_at = $created_at;
+        return $this;
     }
 
     /**
@@ -120,6 +122,7 @@ class Category
     public function setUpdatedAt(\DateTime $updated_at)
     {
         $this->updated_at = $updated_at;
+        return $this;
     }
 
     /**
@@ -140,6 +143,7 @@ class Category
     public function addPost(\Trsteel\BlogBundle\Entity\Post $post)
     {
         $this->post[] = $post;
+        return $this;
     }
 
     /**
