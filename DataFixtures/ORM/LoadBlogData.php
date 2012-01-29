@@ -3,13 +3,14 @@
 namespace Trsteel\BlogBundle\DataFixtures\ORM;
 
 use Doctrine\Common\DataFixtures\FixtureInterface;
+use Doctrine\Common\Persistence\ObjectManager;
 
 use Trsteel\BlogBundle\Entity\Category;
 use Trsteel\BlogBundle\Entity\Post;
 
 class LoadUserData implements FixtureInterface
 {
-    public function load($manager)
+    public function load(ObjectManager $manager)
     {
         
         //create a random number of categories
