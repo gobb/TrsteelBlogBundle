@@ -18,7 +18,7 @@ class Post
     /**
      * @var integer $id
      *
-     * @ORM\Column(name="id", type="integer")
+     * @ORM\Column(name="id", type="integer", nullable=false)
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
      */
@@ -27,7 +27,7 @@ class Post
     /**
      * @var date $date
      *
-     * @ORM\Column(name="date", type="date")
+     * @ORM\Column(name="date", type="date", nullable=false)
      * @Assert\NotBlank(message="Please enter a category.")
      * @Assert\Date()
      */
@@ -36,7 +36,7 @@ class Post
     /**
      * @var string $title
      *
-     * @ORM\Column(name="title", type="string", length=255)
+     * @ORM\Column(name="title", type="string", length=255, nullable=false)
      * @Assert\NotBlank(message="Please enter a title.")
      */
     private $title;
@@ -44,7 +44,7 @@ class Post
     /**
      * @var text $body
      *
-     * @ORM\Column(name="body", type="text")
+     * @ORM\Column(name="body", type="text", nullable=false)
      * @Assert\NotBlank(message="Please enter a body.")
      */
     private $body;
@@ -52,14 +52,14 @@ class Post
     /**
      * @var boolean $is_enabled
      *
-     * @ORM\Column(name="is_enabled", type="boolean")
+     * @ORM\Column(name="is_enabled", type="boolean", nullable=false)
      */
     private $is_enabled;
 
     /**
      * @var datetime $created_at
      *
-     * @ORM\Column(name="created_at", type="datetime")
+     * @ORM\Column(name="created_at", type="datetime", nullable=false)
      * @Assert\DateTime()
      */
     private $created_at;
@@ -67,7 +67,7 @@ class Post
     /**
      * @var datetime $updated_at
      *
-     * @ORM\Column(name="updated_at", type="datetime")
+     * @ORM\Column(name="updated_at", type="datetime", nullable=false)
      * @Assert\DateTime()
      */
     private $updated_at;
