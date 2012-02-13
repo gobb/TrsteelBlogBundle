@@ -17,7 +17,8 @@ class PostRepository extends EntityRepository
         $qb = $this->isActive($qb, $is_active);
         $qb = $this->attachCategories($qb);
         
-        $qb->andwhere('c.id = :category_id')->setParameter('category_id', $category_id);
+        $qb->innerJoin('p.category', 'c2');
+        $qb->andwhere('c2.id = :category_id')->setParameter('category_id', $category_id);
         
         return $qb->getQuery();
     }
