@@ -7,7 +7,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 class PostController extends Controller
 {
     public function indexAction()
-    {        
+    {
         $em     = $this->getDoctrine()->getEntityManager();
         $query  = $em->getRepository('TrsteelBlogBundle:Post')->getPostsWithCategoryQuery(true);
         
@@ -49,7 +49,7 @@ class PostController extends Controller
     }
     
     public function archiveAction($year, $month = null)
-    {   
+    {
         $em     = $this->getDoctrine()->getEntityManager();
         $query  = $em->getRepository('TrsteelBlogBundle:Post')->getPostsByYearMonth($year, $month);
         
