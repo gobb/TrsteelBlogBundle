@@ -59,13 +59,7 @@ class PostRepository extends EntityRepository
         $qb = $this->isActive($qb, $is_active);
         $qb = $this->attachCategories($qb);
         
-        try {
-            $post = $qb->getQuery()->getSingleResult();
-        } catch (\Doctrine\Orm\NoResultException $e) {
-            $post = null;
-        }
-        
-        return $post;
+        return $qb->getQuery()->getOneOrNullResult();
     }
     
     public function getPostsQuery()
